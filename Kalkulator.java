@@ -15,11 +15,15 @@
  */
 public class Kalkulator 
 {
-  
+
+    private int hodnotaZobrazeni;
+    private int prvniOperant;
+
     /**
      *  konstruktor třídy
      */
     public Kalkulator () {
+        hodnotaZobrazeni = 0;
     }
 
     /**
@@ -30,8 +34,7 @@ public class Kalkulator
      */
  
     public int getHodnotaKZobrazeni() {
-        // DOPLNIT TUTO METODU
-        return 1;
+        return hodnotaZobrazeni;
     }
 
     /**
@@ -42,14 +45,15 @@ public class Kalkulator
      *                   od 0 do 9
      */
     public void cislice(int hodnota) {
-        // DOPLNIT TUTO METODU
+        hodnotaZobrazeni = (hodnotaZobrazeni * 10) + hodnota;
     }
 
     /**
      * metoda se volá při stisknutí tlačítka "+" (plus) na kalkulačce
      */
     public void plus() {
-        // DOPLNIT TUTO METODU
+        prvniOperant = hodnotaZobrazeni;
+        hodnotaZobrazeni = 0;
     }
 
     /**
@@ -63,14 +67,14 @@ public class Kalkulator
      * metoda se volá při stisknutí tlačítka "=" (rovná se) na kalkulačce
      */
     public void rovnaSe() {
-        // DOPLNIT TUTO METODU
+        hodnotaZobrazeni = prvniOperant + hodnotaZobrazeni;
     }
     
     /**
      * metoda se volá při stisknutí tlačítka "C" (clear) na kalkulačce
      */
     public void vymaz() {
-	 // DOPLNIT TUTO METODU
+        hodnotaZobrazeni = 0;
     }
 
     /**
@@ -79,8 +83,7 @@ public class Kalkulator
      * @return   řetězec se jménem autora
      */    
     public String getAutor() {
-        // UPRAVIT TUTO METODU
-        return ".......";
+        return "Jan Jurka";
     }
     
     /**
@@ -89,8 +92,7 @@ public class Kalkulator
      * @return   řetězec s verzí programu
      */
     public String getVerze() {
-        // UPRAVIT TUTO METODU
-        return "0.0";
+        return "0.1.patch-3";
     }
     
 }
