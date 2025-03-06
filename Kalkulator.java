@@ -19,6 +19,7 @@ public class Kalkulator
     private int hodnotaZobrazeni;
     private int prvniOperant;
     private char operator;
+    private boolean noveCislo = true;
 
     /**
      *  konstruktor třídy
@@ -46,7 +47,12 @@ public class Kalkulator
      *                   od 0 do 9
      */
     public void cislice(int hodnota) {
-        hodnotaZobrazeni = (hodnotaZobrazeni * 10) + hodnota;
+        if (noveCislo) {
+            hodnotaZobrazeni = hodnota;
+            noveCislo = false;
+        } else {
+            hodnotaZobrazeni = (hodnota * 10) + hodnota;
+        }
     }
 
     /**
@@ -56,6 +62,7 @@ public class Kalkulator
         prvniOperant = hodnotaZobrazeni;
         hodnotaZobrazeni = 0;
         operator = '+';
+        noveCislo = true;
     }
 
     /**
@@ -65,6 +72,7 @@ public class Kalkulator
         prvniOperant = hodnotaZobrazeni;
         hodnotaZobrazeni = 0;
         operator = '-';
+        noveCislo = true;
     }
 
     /**
@@ -76,6 +84,7 @@ public class Kalkulator
         else if (operator == '-')
             hodnotaZobrazeni = prvniOperant - hodnotaZobrazeni;
         operator = ' ';
+        noveCislo = true;
     }
     
     /**
@@ -83,6 +92,9 @@ public class Kalkulator
      */
     public void vymaz() {
         hodnotaZobrazeni = 0;
+        operator = ' ';
+        noveCislo = true;
+        prvniOperant = 0;
     }
 
     /**
