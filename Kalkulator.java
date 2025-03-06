@@ -18,6 +18,7 @@ public class Kalkulator
 
     private int hodnotaZobrazeni;
     private int prvniOperant;
+    private char operator;
 
     /**
      *  konstruktor třídy
@@ -54,20 +55,26 @@ public class Kalkulator
     public void plus() {
         prvniOperant = hodnotaZobrazeni;
         hodnotaZobrazeni = 0;
+        operator = '+';
     }
 
     /**
      * metoda se volá při stisknutí tlačítka "-" (minus) na kalkulačce
      */
     public void minus() {
-        // DOPLNIT TUTO METODU
+        prvniOperant = hodnotaZobrazeni;
+        hodnotaZobrazeni = 0;
+        operator = '-';
     }
 
     /**
      * metoda se volá při stisknutí tlačítka "=" (rovná se) na kalkulačce
      */
     public void rovnaSe() {
-        hodnotaZobrazeni = prvniOperant + hodnotaZobrazeni;
+        if (operator == '+')
+            hodnotaZobrazeni = prvniOperant + hodnotaZobrazeni;
+        else if (operator == '-')
+            hodnotaZobrazeni = prvniOperant - hodnotaZobrazeni;
     }
     
     /**
