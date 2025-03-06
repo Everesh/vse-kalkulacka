@@ -75,6 +75,7 @@ public class Kalkulator
             hodnotaZobrazeni = prvniOperant + hodnotaZobrazeni;
         else if (operator == '-')
             hodnotaZobrazeni = prvniOperant - hodnotaZobrazeni;
+        operator = ' ';
     }
     
     /**
