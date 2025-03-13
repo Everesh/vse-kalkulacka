@@ -19,4 +19,24 @@ public class KalkulackaTest {
         kalk.cislice(5);
         assertEquals(35, kalk.getHodnotaKZobrazeni());
     }
+
+    @Test
+    public void test35Vymaz() {
+        kalk.cislice(3);
+        kalk.cislice(5);
+        kalk.vymaz();
+        assertEquals(0, kalk.getHodnotaKZobrazeni());
+    }
+
+    @Test
+    public void test35Plus2Rovnase() {
+        kalk.cislice(3);
+        kalk.cislice(5);
+        kalk.plus();
+        assertEquals(0, kalk.getHodnotaKZobrazeni());
+        kalk.cislice(2);
+        assertEquals(2, kalk.getHodnotaKZobrazeni());
+        kalk.rovnaSe();
+        assertEquals(37, kalk.getHodnotaKZobrazeni());
+    }
 }
