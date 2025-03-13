@@ -21,6 +21,8 @@ public class Kalkulator
     private char operator;
     private boolean noveCislo = true;
 
+    private final int ZADNA_OPERACE = 0;
+
     /**
      *  konstruktor třídy
      */
@@ -51,7 +53,7 @@ public class Kalkulator
             hodnotaZobrazeni = hodnota;
             noveCislo = false;
         } else {
-            hodnotaZobrazeni = (hodnota * 10) + hodnota;
+            hodnotaZobrazeni = (hodnotaZobrazeni * 10) + hodnota;
         }
     }
 
