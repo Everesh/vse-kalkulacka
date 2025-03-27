@@ -33,7 +33,7 @@ public class KalkulackaTest {
         kalk.cislice(3);
         kalk.cislice(5);
         kalk.plus();
-        assertEquals(0, kalk.getHodnotaKZobrazeni());
+        assertEquals(35, kalk.getHodnotaKZobrazeni());
         kalk.cislice(2);
         assertEquals(2, kalk.getHodnotaKZobrazeni());
         kalk.rovnaSe();
